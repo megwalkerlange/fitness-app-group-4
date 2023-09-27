@@ -67,3 +67,83 @@ function FitnessForm() {
             Active
           </label>
         </div>
+
+        <div className="form-group">
+          <label>Fitness Goals:</label>
+          <label>
+            <input
+              type="checkbox"
+              value="weightLoss"
+              checked={fitnessGoals.includes('weightLoss')}
+              onChange={(e) => setFitnessGoals((goals) => updateCheckboxArray(goals, 'weightLoss', e.target.checked))}
+            />
+            Weight Loss
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              value="muscleGain"
+              checked={fitnessGoals.includes('muscleGain')}
+              onChange={(e) => setFitnessGoals((goals) => updateCheckboxArray(goals, 'muscleGain', e.target.checked))}
+            />
+            Muscle Gain
+          </label>
+        </div>
+
+        <div className="form-group">
+          <label>Dietary Restrictions:</label>
+          <label>
+            <input
+              type="checkbox"
+              value="vegetarian"
+              checked={dietaryRestrictions.includes('vegetarian')}
+              onChange={(e) => setDietaryRestrictions((restrictions) => updateCheckboxArray(restrictions, 'vegetarian', e.target.checked))}
+            />
+            Vegetarian
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              value="vegan"
+              checked={dietaryRestrictions.includes('vegan')}
+              onChange={(e) => setDietaryRestrictions((restrictions) => updateCheckboxArray(restrictions, 'vegan', e.target.checked))}
+            />
+            Vegan
+          </label>
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="medicalConditions">Medical Conditions:</label>
+          <textarea
+            id="medicalConditions"
+            value={medicalConditions}
+            onChange={(e) => setMedicalConditions(e.target.value)}
+          />
+        </div>
+
+        <div className="form-group">
+          <label>
+            <input
+              type="checkbox"
+              checked={newsletterSubscription}
+              onChange={() => setNewsletterSubscription(!newsletterSubscription)}
+            />
+            Subscribe to Newsletter
+          </label>
+        </div>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  );
+}
+
+function updateCheckboxArray(arr, value, isChecked) {
+  if (isChecked) {
+    return [...arr, value];
+  } else {
+    return arr.filter((item) => item !== value);
+  }
+}
+
+export default FitnessForm;
