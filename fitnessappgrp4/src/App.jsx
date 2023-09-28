@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/navbar';
-import Bootstrap from 'bootstrap';
+// import Bootstrap from 'bootstrap';
 import PastWorkouts from './components/pages/pastWorkouts';
 import CurrentWorkouts from './components/pages/currentWorkouts';
 import FutureWorkouts from './components/pages/futureWorkouts';
