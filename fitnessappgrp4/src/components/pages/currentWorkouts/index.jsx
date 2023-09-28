@@ -1,13 +1,5 @@
-import App from '../../../App'
-
-
 function currentWorkouts() {
-
-    return(
-        <>
-        <p>Hello</p>
-        </>
-    )
+  return <p>Hello current workouts</p>;
 }
 
-export default currentWorkouts
+export default currentWorkouts;

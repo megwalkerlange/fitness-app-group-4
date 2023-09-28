@@ -1,13 +1,5 @@
-import {Link} from 'react-router-dom'
-import App from '../../../App'
-
 function pastWorkouts() {
-
-    return(
-        <>
-        <p>Hello</p>
-        </>
-    )
+  return <p>Hello past workouts</p>;
 }
 
-export default pastWorkouts
+export default pastWorkouts;
