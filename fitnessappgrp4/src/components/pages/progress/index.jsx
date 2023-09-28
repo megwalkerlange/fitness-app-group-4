@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Line } from 'react-chartjs-2';
+import React from 'react';
+import Progress from '../progress/index';
 
 const Progress = () => {
   const [chartData, setChartData] = useState({
@@ -35,4 +37,13 @@ const Progress = () => {
   );
 };
 
-export default Progress;
+const PastWorkouts = () => {
+  return (
+    <div className="past-workouts">
+      <h2>Past Workouts</h2>
+      <Progress />
+    </div>
+  );
+};
+
+export default PastWorkouts;
