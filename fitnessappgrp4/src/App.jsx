@@ -5,6 +5,7 @@ import Navbar from './components/navbar';
 import PastWorkouts from './components/pages/pastWorkouts';
 import CurrentWorkouts from './components/pages/currentWorkouts';
 import FutureWorkouts from './components/pages/futureWorkouts';
+import Home from './components/pages/home';
 
 export function App() {
   return (
@@ -13,7 +14,7 @@ export function App() {
         <div>
           <Navbar />
           <Routes>
-            {/* <Route path='home' element={<App />} /> */}
+            <Route path="home" element={<Home />} />
             <Route path="pastWorkouts" element={<PastWorkouts />} />
             <Route path="currentWorkouts" element={<CurrentWorkouts />} />
             <Route path="futureWorkouts" element={<FutureWorkouts />} />
