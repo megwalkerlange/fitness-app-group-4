@@ -31,11 +31,7 @@ function Navbar() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink
-                  to="futureWorkouts"
-                  className="nav-link disabled"
-                  aria-disabled="true"
-                >
+                <NavLink to="futureWorkouts" className="nav-link">
                   Future Workouts
                 </NavLink>
               </li>

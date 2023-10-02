@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const workoutOptions = [
   'Cardio',
@@ -36,6 +36,16 @@ function DropDownForm() {
     difficultyOptions[0],
   );
 
+  //   useEffect(() => {
+  //     axios
+  //       .get('https://api.api-ninjas.com/v1/exercises?muscle={}'.workoutOptions)
+  //       .then(response => {
+  //         setSelected(response.data);
+  //       })
+  //       .catch(error => {
+  //         console.error(error);
+  //       });
+  //   }, []);
   return (
     <>
       <form>
@@ -69,6 +79,8 @@ function DropDownForm() {
         </select>
       </form>
       <button>Submit</button>
+
+      <span className="exercise-output"></span>
     </>
   );
 }
