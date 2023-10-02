@@ -79,8 +79,6 @@ function DropDownForm() {
         </select>
       </form>
       <button>Submit</button>
-
-      <span className="exercise-output"></span>
     </>
   );
 }
