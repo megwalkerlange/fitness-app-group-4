@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import API from '../../utils/API';
+import currentWorkoutSearchContainer from '../currentWorkoutSearchContainer';
 
 const workoutOptions = [
   'Cardio',
@@ -10,7 +12,7 @@ const workoutOptions = [
   'Strongman',
 ];
 const muscleOptions = [
-  'Abdominols',
+  'Abdominals',
   'Abductors',
   'Biceps',
   'Calves',
@@ -36,16 +38,28 @@ function DropDownForm() {
     difficultyOptions[0],
   );
 
-  //   useEffect(() => {
-  //     axios
-  //       .get('https://api.api-ninjas.com/v1/exercises?muscle={}'.workoutOptions)
-  //       .then(response => {
-  //         setSelected(response.data);
-  //       })
-  //       .catch(error => {
-  //         console.error(error);
-  //       });
-  //   }, []);
+  const [selectedMuscle, setSelectedMuscle] = useState(muscleOptions[0]);
+  const [searchResults, setSearchResults] = useState([]);
+
+  useEffect(() => {
+    async function getData() {
+      const data = await API.search(selectedMuscle);
+
+      console.log('Hello World');
+      console.log(data);
+      setSearchResults(data.data);
+    }
+    getData();
+    //   axios
+    //     .get('https://api.api-ninjas.com/v1/exercises?muscle={}'.workoutOptions)
+    //     .then(response => {
+    //       setSelected(response.data);
+    //     })
+    //     .catch(error => {
+    //       console.error(error);
+
+    // });
+  }, [selectedMuscle]);
   return (
     <>
       <form>
@@ -60,7 +74,10 @@ function DropDownForm() {
       </form>
       <form>
         <p>Please select what muscle group you would like to target</p>
-        <select value={selected} onChange={e => setSelected(e.target.value)}>
+        <select
+          value={selected}
+          onChange={e => setSelectedMuscle(e.target.value)}
+        >
           {muscleOptions.map(value => (
             <option value={value} key={value}>
               {value}
@@ -79,6 +96,14 @@ function DropDownForm() {
         </select>
       </form>
       <button>Submit</button>
+      <ul className="list-group search-results">
+        {searchResults.map(result => (
+          <li key={result} className="list-group-item">
+            <p>{result.name} </p>
+          </li>
+        ))}
+      </ul>
+      ;
     </>
   );
 }

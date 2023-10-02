@@ -2,9 +2,9 @@ import react from 'react';
 
 function currentSearchResults(value) {
   <ul className="list-group search-results">
-    {value.results.map(result => (
+    {value.data.map(result => (
       <li key={result} className="list-group-item">
-        <p>{result} </p>
+        <p>{result.name} </p>
       </li>
     ))}
   </ul>;
