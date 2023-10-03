@@ -2,6 +2,8 @@ body {
     background-color: whitesmoke;
 }
 
-/* .sidebar {
-    height: 100%;
-} */
+.banner {
+    height: 400px;
+    background-color: skyblue;
+    margin-bottom: 20px;
+}
