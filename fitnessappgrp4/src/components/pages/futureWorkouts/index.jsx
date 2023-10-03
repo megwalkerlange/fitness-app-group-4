@@ -1,13 +1,5 @@
-import {Link} from 'react-router-dom'
-import App from '../../../App'
-
 function futureWorkouts() {
-
-    return(
-        <>
-        <p>Hello</p>
-        </>
-    )
+  return <p>Hello future workouts</p>;
 }
 
-export default futureWorkouts
+export default futureWorkouts;

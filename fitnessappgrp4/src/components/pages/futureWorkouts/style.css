@@ -1,0 +1,9 @@
+body {
+    background-color: whitesmoke;
+}
+
+.banner {
+    height: 400px;
+    background-color: skyblue;
+    margin-bottom: 20px;
+}
