@@ -1,0 +1,18 @@
+
+ul {
+
+}
+
+.list-group-item {
+   background-color: rgb(245, 245, 42);
+   padding: 20px;
+   margin: 10px;
+   border-radius: 10px;
+   border-color: yellow;
+}
+
+
+
+p {
+    font-family: 'Bebas Neue', sans-serif;
+}

@@ -10,9 +10,16 @@ function Navbar() {
           </h1>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
-              {/* <li className="nav-item">
-          <NavLink to='home' className="nav-link active" aria-current="page" href="#" >Home</NavLink>
-        </li> */}
+              <li className="nav-item">
+                <NavLink
+                  to="home"
+                  className="nav-link active"
+                  aria-current="page"
+                  href="#"
+                >
+                  Home
+                </NavLink>
+              </li>
               <li className="nav-item">
                 <NavLink to="pastWorkouts" className="nav-link" href="#">
                   Past Workouts
@@ -24,11 +31,7 @@ function Navbar() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink
-                  to="futureWorkouts"
-                  className="nav-link disabled"
-                  aria-disabled="true"
-                >
+                <NavLink to="futureWorkouts" className="nav-link">
                   Future Workouts
                 </NavLink>
               </li>
