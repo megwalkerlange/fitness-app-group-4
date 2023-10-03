@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import API from '../../utils/API';
-import currentWorkoutSearchContainer from '../currentWorkoutSearchContainer';
+import css from '../workoutForm/workoutForm.css';
 
 const workoutOptions = [
   'Cardio',
@@ -12,6 +12,7 @@ const workoutOptions = [
   'Strongman',
 ];
 const muscleOptions = [
+  'Please Select',
   'Abdominals',
   'Abductors',
   'Biceps',
@@ -62,7 +63,7 @@ function DropDownForm() {
   }, [selectedMuscle]);
   return (
     <>
-      <form>
+      {/* <form>
         <p>Please select which workout you would like to complete:</p>
         <select value={selected} onChange={e => setSelected(e.target.value)}>
           {workoutOptions.map(value => (
@@ -71,7 +72,7 @@ function DropDownForm() {
             </option>
           ))}
         </select>
-      </form>
+      </form> */}
       <form>
         <p>Please select what muscle group you would like to target</p>
         <select
@@ -85,7 +86,7 @@ function DropDownForm() {
           ))}
         </select>
       </form>
-      <form>
+      {/* <form>
         <p>Please select a difficulty level:</p>
         <select value={selected} onChange={e => setSelected(e.target.value)}>
           {difficultyOptions.map(value => (
@@ -94,16 +95,18 @@ function DropDownForm() {
             </option>
           ))}
         </select>
-      </form>
-      <button>Submit</button>
+      </form> */}
+      {/* <button onChange={e => setSelectedMuscle(e.target.value)}>Submit</button> */}
       <ul className="list-group search-results">
         {searchResults.map(result => (
           <li key={result} className="list-group-item">
-            <p>{result.name} </p>
+            <p>{result.name}</p>
+            <p>{result.type}</p>
+            <p> {result.difficulty}</p>
+            <p> {result.instructions}</p>
           </li>
         ))}
       </ul>
-      ;
     </>
   );
 }
