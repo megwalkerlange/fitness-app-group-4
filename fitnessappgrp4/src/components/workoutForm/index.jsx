@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import API from '../../utils/API';
+import pastWorkoutContainer from '../pastWorkoutContainer';
 import css from '../workoutForm/workoutForm.css';
 
 const workoutOptions = [
@@ -41,38 +42,30 @@ function DropDownForm() {
 
   const [selectedMuscle, setSelectedMuscle] = useState(muscleOptions[0]);
   const [searchResults, setSearchResults] = useState([]);
+  // localStorage.setItem('name', JSON.stringify(searchResults));
 
   useEffect(() => {
     async function getData() {
       const data = await API.search(selectedMuscle);
 
-      console.log('Hello World');
       console.log(data);
       setSearchResults(data.data);
     }
     getData();
-    //   axios
-    //     .get('https://api.api-ninjas.com/v1/exercises?muscle={}'.workoutOptions)
-    //     .then(response => {
-    //       setSelected(response.data);
-    //     })
-    //     .catch(error => {
-    //       console.error(error);
-
-    // });
   }, [selectedMuscle]);
+
+  useEffect(() => {
+    localStorage.setItem('name', JSON.stringify(searchResults));
+  }, [searchResults]);
+
+  useState(() => {
+    // getting stored value
+    const saved = localStorage.getItem('name');
+    const initialValue = JSON.parse(saved);
+    return initialValue || '';
+  });
   return (
     <>
-      {/* <form>
-        <p>Please select which workout you would like to complete:</p>
-        <select value={selected} onChange={e => setSelected(e.target.value)}>
-          {workoutOptions.map(value => (
-            <option value={value} key={value}>
-              {value}
-            </option>
-          ))}
-        </select>
-      </form> */}
       <form>
         <p>Please select what muscle group you would like to target</p>
         <select
@@ -86,17 +79,6 @@ function DropDownForm() {
           ))}
         </select>
       </form>
-      {/* <form>
-        <p>Please select a difficulty level:</p>
-        <select value={selected} onChange={e => setSelected(e.target.value)}>
-          {difficultyOptions.map(value => (
-            <option value={value} key={value}>
-              {value}
-            </option>
-          ))}
-        </select>
-      </form> */}
-      {/* <button onChange={e => setSelectedMuscle(e.target.value)}>Submit</button> */}
       <ul className="list-group search-results">
         {searchResults.map(result => (
           <li key={result} className="list-group-item">
@@ -104,6 +86,9 @@ function DropDownForm() {
             <p>{result.type}</p>
             <p> {result.difficulty}</p>
             <p> {result.instructions}</p>
+            <button onChange={e => initialValue()}>
+              Click to save Workout
+            </button>
           </li>
         ))}
       </ul>
