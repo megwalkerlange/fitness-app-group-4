@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import API from '../../utils/API';
-import pastWorkoutContainer from '../pastWorkoutContainer';
 import css from '../workoutForm/workoutForm.css';
 
 const workoutOptions = [
@@ -40,11 +39,15 @@ function DropDownForm() {
     difficultyOptions[0],
   );
 
+  const handleSubmit = e => {
+    e.preventDefault();
+  };
+
   const [selectedMuscle, setSelectedMuscle] = useState(muscleOptions[0]);
   const [searchResults, setSearchResults] = useState([]);
-  // localStorage.setItem('name', JSON.stringify(searchResults));
 
-  useEffect(() => {
+  localStorage.setItem('name', JSON.stringify(searchResults));
+  const clear = useEffect(() => {
     async function getData() {
       const data = await API.search(selectedMuscle);
 
@@ -54,23 +57,20 @@ function DropDownForm() {
     getData();
   }, [selectedMuscle]);
 
-  useEffect(() => {
-    localStorage.setItem('name', JSON.stringify(searchResults));
-  }, [searchResults]);
+  // useEffect(() => {
+  //   localStorage.setItem('name', JSON.stringify(searchResults));
+  //   const saved = localStorage.getItem('name');
+  //   // const initialValue = JSON.parse(saved);
+  //   console.log(saved);
+  // }, [searchResults]);
 
-  useState(() => {
-    // getting stored value
-    const saved = localStorage.getItem('name');
-    const initialValue = JSON.parse(saved);
-    return initialValue || '';
-  });
   return (
     <>
-      <form>
+      <form onSubmit={handleSubmit}>
         <p>Please select what muscle group you would like to target</p>
         <select
-          value={selected}
-          onChange={e => setSelectedMuscle(e.target.value)}
+        // value={selected}
+        // onChange={e => setSelectedMuscle(e.target.value)}
         >
           {muscleOptions.map(value => (
             <option value={value} key={value}>
@@ -79,6 +79,12 @@ function DropDownForm() {
           ))}
         </select>
       </form>
+      <button
+        // value={selected}
+        onClick={e => setSelectedMuscle(e.target.value)}
+      >
+        Submit
+      </button>
       <ul className="list-group search-results">
         {searchResults.map(result => (
           <li key={result} className="list-group-item">
@@ -86,7 +92,7 @@ function DropDownForm() {
             <p>{result.type}</p>
             <p> {result.difficulty}</p>
             <p> {result.instructions}</p>
-            <button onChange={e => initialValue()}>
+            <button onClick={e => setData(e.target.value)}>
               Click to save Workout
             </button>
           </li>

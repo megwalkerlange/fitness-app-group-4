@@ -1,14 +1,20 @@
-import workoutForm from '../workoutForm/index';
-import { useState, useEffect } from 'react';
 import css from '../pastWorkoutContainer/pastcontain.css';
 
-// const [name, setName] = useState(() => {
-//   // getting stored value
-//   const saved = localStorage.getItem('name');
-//   const initialValue = JSON.parse(saved);
-//   return initialValue || '';
-// });
+// const searchStored [searchResults, setSearchResults] = useEffect(data);
 
-function pastWorkoutContainer() {}
+const showStored = localStorage.getItem('name');
+console.log([showStored]);
 
-export default pastWorkoutContainer;
+function PastWorkoutContainer() {
+  return (
+    <>
+      <p>Your Previous Workouts</p>
+      <ul>
+        <li>
+          <p>{showStored}</p>
+        </li>
+      </ul>
+    </>
+  );
+}
+export default PastWorkoutContainer;
