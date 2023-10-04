@@ -1,4 +1,5 @@
 import FitnessForm from '../../form';
+import css from '../home/home.css';
 
 function Home() {
   return (
