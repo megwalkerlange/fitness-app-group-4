@@ -25,9 +25,34 @@ h2 {
 }
 
 form {
+    display: inline-block;
     background-color: aqua;
     padding: 20px;
     width: 30%;
     margin: auto;
     text-align: left;
 }
+
+/* Media Queries */
+
+@media all and (max-width: 982px) { 
+    
+    .fitness-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+    }
+    
+    form {
+        display: inline-block;
+        background-color: aqua;
+        padding: 20px;
+        width: 50%;
+        margin: auto;
+        text-align: left;
+        margin-bottom: 50px;
+    }    
+    
+ }
