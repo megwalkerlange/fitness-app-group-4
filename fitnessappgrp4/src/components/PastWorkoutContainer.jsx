@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-// import './pastWorkoutContainer.css'; // Import your CSS file here
 
 function PastWorkoutContainer() {
+  // State to hold the saved workouts
   const [savedWorkouts, setSavedWorkouts] = useState([]);
 
+  // Function to retrieve saved workouts from local storage
   useEffect(() => {
-    // Fetch saved workouts from local storage
     const savedWorkoutsData = JSON.parse(localStorage.getItem('savedWorkouts')) || [];
     setSavedWorkouts(savedWorkoutsData);
   }, []);
@@ -13,10 +13,15 @@ function PastWorkoutContainer() {
   return (
     <div className="past-workout-container">
       <h2>Your Previous Workouts</h2>
-      <ul>
+      <ul className="past-workout-list">
         {savedWorkouts.map((workout, index) => (
-          <li key={index}>
-            <p>{workout}</p>
+          <li key={index} className="past-workout-item">
+            <p>Name: {workout.name}</p>
+            <p>Type: {workout.type}</p>
+            <p>Muscle: {workout.muscle}</p>
+            <p>Equipment: {workout.equipment}</p>
+            <p>Difficulty: {workout.difficulty}</p>
+            <p>Instructions: {workout.instructions}</p>
           </li>
         ))}
       </ul>

@@ -8,8 +8,18 @@ function FitnessChart() {
       {
         label: 'Workout Progress',
         data: [5, 8, 12, 15], // Replace with your fitness data
-        backgroundColor: 'rgba(75, 192, 192, 0.6)', // Adjust the colors as needed
-        borderColor: 'rgba(75, 192, 192, 1)',
+        backgroundColor: [
+          'rgba(75, 192, 192, 0.6)',
+          'rgba(255, 99, 132, 0.6)',
+          'rgba(54, 162, 235, 0.6)',
+          'rgba(255, 206, 86, 0.6)',
+        ], // Custom colors for each bar
+        borderColor: [
+          'rgba(75, 192, 192, 1)',
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+        ], // Border colors
         borderWidth: 1,
       },
     ],
