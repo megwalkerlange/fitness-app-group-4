@@ -1,9 +1,10 @@
 import { NavLink } from 'react-router-dom';
 
+
 function Navbar() {
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <nav className="navbar navbar-expand-sm bg-body-tertiary">
         <div className="container-fluid">
           <h1 className="navbar-brand" href="#">
             Fantastic Fitness Friend

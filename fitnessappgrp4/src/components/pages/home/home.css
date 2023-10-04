@@ -1,2 +1,34 @@
 
-function
+/* 
+@media screen and (max-width: 480px) {
+    .nav-link {width: 100%}
+    .nav-item {width: 100%}
+  } */
+
+
+.container-fluid {
+    background-color: rgb(175, 3, 118);
+    height: 80px;
+    font-size: 15px !important;
+}
+
+#navbarNav {
+    margin-right: 20px;
+    text-align: right;
+    justify-content: end;
+}
+
+.nav-link {
+    color: white;
+    margin-right: 10px;
+}
+
+.active {
+    color: white !important
+}
+
+.navbar-brand {
+    color: rgb(235, 140, 203);
+    font-weight: 700;
+
+}
