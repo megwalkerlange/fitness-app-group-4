@@ -1,2 +1,12 @@
+*, p {
+    font-family: 'Roboto', sans-serif;
+}
 
-function
+.intro-text {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.intro-text p {
+    margin-top: 20px;
+}
