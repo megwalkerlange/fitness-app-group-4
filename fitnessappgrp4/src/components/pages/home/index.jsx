@@ -1,9 +1,10 @@
+import React from 'react';
 import FitnessForm from '../../form';
-import css from '../home/home.css';
+import './home.css'; // Import your CSS file
 
 function Home() {
   return (
-    <>
+    <div className="container">
       <p>
         Need help keeping track of your workouts? Do you want to set practical
         goals that you can maintain long-term? Then ‘Fantastic Fitness Friend;
@@ -13,8 +14,8 @@ function Home() {
         you’re on a sprint or a marathon Fantastic Fitness Friend will be there
         every step of the way!
       </p>
-      <FitnessForm></FitnessForm>
-    </>
+      <FitnessForm />
+    </div>
   );
 }
 

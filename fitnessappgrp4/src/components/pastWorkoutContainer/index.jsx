@@ -1,24 +1,27 @@
+import React from 'react';
 import '../pastWorkoutContainer/pastcontain.css';
-import { useState, useEffect } from 'react';
 
-const savedWorkouts = JSON.parse(localStorage.getItem('savedWorkouts'));
-const tryy = JSON.stringify(savedWorkouts[1]);
-// const getData = localStorage.getItem('savedWorkouts');
 
 function PastWorkoutContainer() {
-  console.log(tryy);
+  const savedWorkouts = JSON.parse(localStorage.getItem('savedWorkouts'));
 
   return (
-    <>
-      <p>Your Previous Workouts</p>
-      {/* <button onClick={getWorkouts}>Add Previous Workouts</button> */}
-
+    <div>
+      <h3>Your Previous Workouts</h3>
       <ul>
-        <li>
-          <p>{tryy}</p>
-        </li>
+        {savedWorkouts &&
+          savedWorkouts.map((workout, index) => (
+            <li key={index}>
+              <p>{workout.name}</p>
+              <p>Type: {workout.type}</p>
+              <p>Muscle: {workout.muscle}</p>
+              <p>Equipment: {workout.equipment}</p>
+              <p>Difficulty: {workout.difficulty}</p>
+              <p>Instructions: {workout.instructions}</p>
+            </li>
+          ))}
       </ul>
-    </>
+    </div>
   );
 }
 
