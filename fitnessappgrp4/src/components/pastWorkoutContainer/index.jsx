@@ -1,16 +1,13 @@
 import '../pastWorkoutContainer/pastcontain.css';
 import { useState, useEffect } from 'react';
 
-function getWorkouts() {
-  // getting stored items
-  const savedWorkouts = localStorage.getItem('savedWorkouts');
-  const savedList = JSON.parse(savedWorkouts);
-  return savedList || [];
-}
-
+const savedWorkouts = JSON.parse(localStorage.getItem('savedWorkouts'));
+const tryy = JSON.stringify(savedWorkouts[1]);
 // const getData = localStorage.getItem('savedWorkouts');
 
 function PastWorkoutContainer() {
+  console.log(tryy);
+
   return (
     <>
       <p>Your Previous Workouts</p>
@@ -18,7 +15,7 @@ function PastWorkoutContainer() {
 
       <ul>
         <li>
-          <p>{getWorkouts}</p>
+          <p>{tryy}</p>
         </li>
       </ul>
     </>
