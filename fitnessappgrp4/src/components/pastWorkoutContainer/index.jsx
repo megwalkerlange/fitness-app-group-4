@@ -1,12 +1,7 @@
 import '../pastWorkoutContainer/pastcontain.css';
 import { useState, useEffect } from 'react';
 
-function getWorkouts() {
-  // getting stored items
-  const savedWorkouts = localStorage.getItem('savedWorkouts');
-  const savedList = JSON.parse(savedWorkouts);
-  return savedList || [];
-}
+const savedWorkouts = localStorage.getItem('savedWorkouts');
 
 // const getData = localStorage.getItem('savedWorkouts');
 
@@ -18,7 +13,7 @@ function PastWorkoutContainer() {
 
       <ul>
         <li>
-          <p>{getWorkouts}</p>
+          <p>{savedWorkouts}</p>
         </li>
       </ul>
     </>
