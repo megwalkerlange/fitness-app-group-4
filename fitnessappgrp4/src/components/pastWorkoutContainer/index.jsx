@@ -1,6 +1,13 @@
 import React from 'react';
 import '../pastWorkoutContainer/pastcontain.css';
 
+const savedWorkouts = JSON.parse(localStorage.getItem('savedWorkouts'));
+const tryy = JSON.stringify(savedWorkouts[1]);
+
+// const name = tryy.split('');
+
+
+
 
 function PastWorkoutContainer() {
   const savedWorkouts = JSON.parse(localStorage.getItem('savedWorkouts'));
