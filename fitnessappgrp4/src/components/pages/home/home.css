@@ -9,4 +9,25 @@
 
 .intro-text p {
     margin-top: 20px;
+    padding: 20px;
+}
+
+h2 {
+    display: none;
+}
+
+.fitness-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+form {
+    background-color: aqua;
+    padding: 20px;
+    width: 30%;
+    margin: auto;
+    text-align: left;
 }
