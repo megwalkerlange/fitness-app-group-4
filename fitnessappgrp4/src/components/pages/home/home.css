@@ -56,3 +56,25 @@ form {
     }    
     
  }
+
+ @media all and (max-width: 560px) { 
+
+    .fitness-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+    }
+    
+    form {
+        display: inline-block;
+        background-color: aqua;
+        padding: 20px;
+        width: 70%;
+        margin: auto;
+        text-align: left;
+        margin-bottom: 50px;
+    }    
+
+}

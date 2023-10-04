@@ -1,5 +1,7 @@
 import FitnessForm from '../../form';
 import css from '../home/home.css';
+// import videoBg from '../../../assets/videoBg.mp4'
+
 function Home() {
   return (
     <>
@@ -10,6 +12,9 @@ function Home() {
       </p>
       </header>
       <FitnessForm></FitnessForm>
+      {/* <div className='main'>
+        <video src={videoBg} />
+      </div> */}
     </>
   );
 }
