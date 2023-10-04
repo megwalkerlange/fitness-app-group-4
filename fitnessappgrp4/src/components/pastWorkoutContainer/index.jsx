@@ -3,6 +3,10 @@ import { useState, useEffect } from 'react';
 
 const savedWorkouts = JSON.parse(localStorage.getItem('savedWorkouts'));
 const tryy = JSON.stringify(savedWorkouts[1]);
+
+// const name = tryy.split('');
+
+console.log(name);
 // const getData = localStorage.getItem('savedWorkouts');
 
 function PastWorkoutContainer() {
