@@ -1,12 +1,12 @@
-// eslint-disable-next-line no-unused-vars
+import React from 'react';
 import PastWorkoutContainer from '../../pastWorkoutContainer';
 
 function pastWorkouts() {
   return (
-    <>
-      <p>Hello past workouts</p>
-      <PastWorkoutContainer></PastWorkoutContainer>
-    </>
+    <div>
+      <h2>Hello past workouts</h2>
+      <PastWorkoutContainer />
+    </div>
   );
 }
 
