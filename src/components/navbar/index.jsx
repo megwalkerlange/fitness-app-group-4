@@ -32,8 +32,8 @@ function Navbar() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink to="futureWorkouts" className="nav-link">
-                  Future Workouts
+                <NavLink to="chart" className="nav-link">
+                  Cahrts
                 </NavLink>
               </li>
             </ul>
