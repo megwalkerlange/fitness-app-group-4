@@ -1,0 +1,35 @@
+/* Add styles for the parent container */
+.current-workouts {
+    text-align: center; /* Center align the content */
+    padding: 20px; /* Add some padding for spacing */
+    background-color: #f8f9fa; /* Set the background color */
+  }
+  
+  /* Style the heading */
+  .current-workouts h1 {
+    font-size: 2rem; /* Adjust the font size */
+    margin-bottom: 20px; /* Add margin at the bottom for spacing */
+  }
+  
+  /* Style the list */
+  ul {
+    list-style-type: none; /* Remove bullet points from lists */
+    padding: 0; /* Remove default padding */
+  }
+  
+  /* Style list items */
+  .list-group-item {
+    background-color: #96b8e6; /* Change the background color */
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    border: 2px solid rgb(178, 221, 231); /* Add a border with yellow color */
+  }
+  
+  /* Style paragraphs */
+  p {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem; /* Adjust font size */
+    color: #333; /* Set text color */
+  }
+  

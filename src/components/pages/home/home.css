@@ -1,0 +1,22 @@
+
+/* home.css */
+/* Add styles for the container element */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Style the paragraph text */
+  p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #333;
+  }
+  
+  /* Add styles for the FitnessForm component if needed */
+  /* Example: */
+  /* .fitness-form {
+    // Your styles here
+  } */
+  
