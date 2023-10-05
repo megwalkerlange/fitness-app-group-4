@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './form.css';
 
 function FitnessForm() {
   const [age, setAge] = useState('');
